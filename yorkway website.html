@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yorkway Mosque</title>
+  
+  <!-- Font Awesome for Icons (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" />
+  
+  <!-- Link to External CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- HEADER / NAVBAR -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <h1 class="logo">Yorkway Mosque</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#prayers">Prayer Times</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#donate">Donate</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="overlay"></div>
+    <div class="hero-content container">
+      <h2 class="hero-title">
+        <span class="arabic-title">﷽</span><br/>
+        Welcome to Yorkway Mosque
+      </h2>
+      <p class="hero-subtitle">
+        “Indeed, the mosques of Allah shall be maintained only by those who believe in Allah and the Last Day…” (Qur'an 9:18)
+      </p>
+      <a href="#prayers" class="btn btn-primary">View Prayer Times</a>
+    </div>
+  </section>
+  
+  <!-- ARABIC INFO SECTION -->
+  <section class="arabic-info container" id="services">
+    <h2 class="section-title">خدمات المسجد (Mosque Services)</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="fas fa-praying-hands fa-3x service-icon"></i>
+        <p>Daily congregational prayers and Jumu'ah services.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-book-quran fa-3x service-icon"></i>
+        <p>Qur’an classes & Islamic studies.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-hand-holding-heart fa-3x service-icon"></i>
+        <p>Community support & counseling.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-building fa-3x service-icon"></i>
+        <p>Mosque events and seminars.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- PRAYER TIMES SECTION -->
+  <section class="prayer-times container" id="prayers">
+    <h2 class="section-title">Prayer Times (أوقات الصلاة)</h2>
+    <p id="today-date"></p>
+    
+    <table class="prayer-table">
+      <thead>
+        <tr>
+          <th>Prayer</th>
+          <th>Arabic</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Fajr</td>
+          <td>الفجر</td>
+          <td id="fajr-time">--:--</td>
+        </tr>
+        <tr>
+          <td>Dhuhr</td>
+          <td>الظهر</td>
+          <td id="dhuhr-time">--:--</td>
+        </tr>
+        <tr>
+          <td>Asr</td>
+          <td>العصر</td>
+          <td id="asr-time">--:--</td>
+        </tr>
+        <tr>
+          <td>Maghrib</td>
+          <td>المغرب</td>
+          <td id="maghrib-time">--:--</td>
+        </tr>
+        <tr>
+          <td>Isha</td>
+          <td>العشاء</td>
+          <td id="isha-time">--:--</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  
+  <!-- DONATION SECTION -->
+  <section class="donate-section" id="donate">
+    <div class="container donate-container">
+      <h2 class="section-title">Support Your Mosque</h2>
+      <p class="donation-desc">Help us maintain and grow our community services. Your support is invaluable.</p>
+      <a href="#" class="btn btn-secondary"><i class="fas fa-donate"></i> Donate Now</a>
+    </div>
+  </section>
+  
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>Yorkway Mosque &copy; 2024 | <span class="arabic-title">مسجد يوركواي</span></p>
+      <p class="footer-links">
+        <a href="#home">Home</a> | 
+        <a href="#prayers">Prayer Times</a> | 
+        <a href="#services">Services</a> | 
+        <a href="#donate">Donate</a>
+      </p>
+    </div>
+  </footer>
+  
+  <!-- External JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>
+

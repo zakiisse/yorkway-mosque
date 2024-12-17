@@ -12,16 +12,17 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" />
   
-  <!-- Link to External CSS -->
-  <link rel="stylesheet" href="css/styles.css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <!-- HEADER / NAVBAR -->
   <header class="site-header">
     <div class="container nav-container">
       <h1 class="logo">Yorkway Mosque</h1>
-      <nav>
-        <ul class="nav-links">
+      <nav class="navbar">
+        <i class="fas fa-bars menu-toggle" id="menuToggle"></i> <!-- Mobile menu toggle icon -->
+        <ul class="nav-links" id="navLinks">
           <li><a href="#home">Home</a></li>
           <li><a href="#prayers">Prayer Times</a></li>
           <li><a href="#services">Services</a></li>
@@ -36,7 +37,7 @@
     <div class="overlay"></div>
     <div class="hero-content container">
       <h2 class="hero-title">
-        <span class="arabic-title">﷽</span><br/>
+        <span class="arabic-title">مسجد يوركواي</span><br/>
         Welcome to Yorkway Mosque
       </h2>
       <p class="hero-subtitle">
@@ -72,8 +73,8 @@
   <!-- PRAYER TIMES SECTION -->
   <section class="prayer-times container" id="prayers">
     <h2 class="section-title">Prayer Times (أوقات الصلاة)</h2>
-    <p id="today-date"></p>
-    
+    <p id="today-date"></p> <!-- Display the current date or an error message -->
+
     <table class="prayer-table">
       <thead>
         <tr>
@@ -133,9 +134,8 @@
       </p>
     </div>
   </footer>
-  
-  <!-- External JavaScript -->
+
+  <!-- External JS -->
   <script src="js/script.js"></script>
 </body>
 </html>
-

@@ -12,10 +12,14 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" />
   
+  <!-- Favicon Link -->
+  <link rel="icon" href="https://scontent-lhr6-1.xx.fbcdn.net/v/t1.6435-9/44213861_1607786676033709_6479503966165008384_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=o9ulAGao5LoQ7kNvgFtuLn6&_nc_zt=23&_nc_ht=scontent-lhr6-1.xx&_nc_gid=ANDsBGExWdEBy7NGimv7kVM&oh=00_AYDuyrHogeitFVzGaeRT3gOsY2xhgk_bANmookHSr4OqNw&oe=678EA7E0" type="image/png" />
+  
   <!-- External CSS -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
   <!-- HEADER / NAVBAR -->
   <header class="site-header">
     <div class="container nav-container">
@@ -32,12 +36,80 @@
     </div>
   </header>
   
+  <!-- PRAYER TIMES SECTION (Moved to Top) -->
+  <section class="prayer-times container" id="prayers">
+    <h2 class="section-title">Prayer Times (أوقات الصلاة)</h2>
+    <p id="today-date"></p> <!-- Show the current date or an error message -->
+    
+    <table class="prayer-table">
+      <thead>
+        <tr>
+          <th>Prayer <br><span>(Arabic / English)</span></th>
+          <th>Start Time</th>
+          <th>Jama’ah</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Fajr Row -->
+        <tr>
+          <td>
+            <span class="arabic">الفجر</span><br>
+            <span class="english">Fajr</span>
+          </td>
+          <td id="fajr-start">--:--</td>
+          <td id="fajr-jamaah">--:--</td>
+        </tr>
+        <!-- Dhuhr Row -->
+        <tr>
+          <td>
+            <span class="arabic">الظهر</span><br>
+            <span class="english">Dhuhr</span>
+          </td>
+          <td id="dhuhr-start">--:--</td>
+          <td id="dhuhr-jamaah">--:--</td>
+        </tr>
+        <!-- Asr Row -->
+        <tr>
+          <td>
+            <span class="arabic">العصر</span><br>
+            <span class="english">Asr</span>
+          </td>
+          <td id="asr-start">--:--</td>
+          <td id="asr-jamaah">--:--</td>
+        </tr>
+        <!-- Maghrib Row -->
+        <tr>
+          <td>
+            <span class="arabic">المغرب</span><br>
+            <span class="english">Maghrib</span>
+          </td>
+          <td id="maghrib-start">--:--</td>
+          <td id="maghrib-jamaah">--:--</td>
+        </tr>
+        <!-- Isha Row -->
+        <tr>
+          <td>
+            <span class="arabic">العشاء</span><br>
+            <span class="english">Isha</span>
+          </td>
+          <td id="isha-start">--:--</td>
+          <td id="isha-jamaah">--:--</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <!-- Jumu’ah Note -->
+    <p id="jumuah-note" class="jumuah-warning">
+      <!-- Will be set dynamically -->
+    </p>
+  </section>
+  
   <!-- HERO SECTION -->
   <section class="hero" id="home">
     <div class="overlay"></div>
     <div class="hero-content container">
       <h2 class="hero-title">
-        <span class="arabic-title">مسجد يوركواي</span><br/>
+        <span class="arabic-title"> ﷽</span><br/>
         Welcome to Yorkway Mosque
       </h2>
       <p class="hero-subtitle">
@@ -70,49 +142,6 @@
     </div>
   </section>
   
-  <!-- PRAYER TIMES SECTION -->
-  <section class="prayer-times container" id="prayers">
-    <h2 class="section-title">Prayer Times (أوقات الصلاة)</h2>
-    <p id="today-date"></p> <!-- Display the current date or an error message -->
-
-    <table class="prayer-table">
-      <thead>
-        <tr>
-          <th>Prayer</th>
-          <th>Arabic</th>
-          <th>Time</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Fajr</td>
-          <td>الفجر</td>
-          <td id="fajr-time">--:--</td>
-        </tr>
-        <tr>
-          <td>Dhuhr</td>
-          <td>الظهر</td>
-          <td id="dhuhr-time">--:--</td>
-        </tr>
-        <tr>
-          <td>Asr</td>
-          <td>العصر</td>
-          <td id="asr-time">--:--</td>
-        </tr>
-        <tr>
-          <td>Maghrib</td>
-          <td>المغرب</td>
-          <td id="maghrib-time">--:--</td>
-        </tr>
-        <tr>
-          <td>Isha</td>
-          <td>العشاء</td>
-          <td id="isha-time">--:--</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-  
   <!-- DONATION SECTION -->
   <section class="donate-section" id="donate">
     <div class="container donate-container">
@@ -121,7 +150,7 @@
       <a href="#" class="btn btn-secondary"><i class="fas fa-donate"></i> Donate Now</a>
     </div>
   </section>
-  
+
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-content">

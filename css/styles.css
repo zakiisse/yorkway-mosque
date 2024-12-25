@@ -134,10 +134,10 @@ body {
 .arabic-title {
   font-family: 'Amiri', serif;
   display: block;
-  font-size: 1.5rem;
-  white-space: normal; /* Allow text to wrap if needed */
-  overflow-wrap: break-word; /* Prevent overflow on small screens */
-  word-wrap: break-word;
+  font-size: clamp(1rem, 4vw, 1.5rem); /* Minimum 1rem, scales up to 1.5rem */
+  white-space: nowrap;
+  text-align: center;
+  margin: 0 auto;
 }
 .hero-subtitle {
   font-style: italic;
@@ -171,7 +171,7 @@ body {
       font-size: 1.5rem;
   }
   .arabic-title {
-      font-size: 2rem;
+      font-size: 1.2rem;
   }
   .services-grid {
       grid-template-columns: 1fr; /* Stack services on mobile */

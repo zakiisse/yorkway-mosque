@@ -1,258 +1,191 @@
-/* GLOBAL STYLES */
-html {
-    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yorkway Mosque</title>
   
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #e0e0e0;
-    color: #333;
-  }
+  <!-- Font Awesome for Icons (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   
-  /* HEADER / NAVBAR */
-  .site-header {
-    background-color: #57310f; /* Maintained original color */
-    padding: 0.5rem 0;
-  }
-  .nav-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  /* Logo */
-  .logo {
-    color: #fff;
-    font-size: 1.5rem;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-  /* Navbar for desktop */
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    transition: transform 0.3s ease;
-  }
-  .nav-links li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-  }
-  .nav-links li a:hover {
-    color: #cda45e;
-  }
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" />
   
-  /* HERO SECTION */
-  .hero {
-    position: relative;
-    height: 60vh;
-    background: url("../images/hero.png") center/cover no-repeat;
-    background-attachment: fixed; /* Keeps background static on scroll */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-  }
-  .overlay {
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0,0,0,0.5);
-  }
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    width: 90%;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  .hero-title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-  }
-  .arabic-title {
-    font-family: 'Amiri', serif;
-    display: block;
-    font-size: 2.5rem;
-  }
-  .hero-subtitle {
-    font-style: italic;
-    margin-bottom: 1.5rem;
-  }
-  .btn {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-  }
-  .btn-primary {
-    background-color: #cda45e;
-    color: #fff;
-  }
-  .btn-primary:hover {
-    opacity: 0.9;
-  }
-  .btn-secondary {
-    background-color: #283739;
-    color: #fff;
-  }
-  .btn-secondary:hover {
-    opacity: 0.9;
-  }
+  <!-- Favicon Link -->
+  <link rel="icon" href="https://scontent-lhr6-1.xx.fbcdn.net/v/t1.6435-9/44213861_1607786676033709_6479503966165008384_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=o9ulAGao5LoQ7kNvgFtuLn6&_nc_zt=23&_nc_ht=scontent-lhr6-1.xx&_nc_gid=ANDsBGExWdEBy7NGimv7kVM&oh=00_AYDuyrHogeitFVzGaeRT3gOsY2xhgk_bANmookHSr4OqNw&oe=678EA7E0" type="image/png" />
   
-  /* ARABIC INFO SECTION */
-  .arabic-info {
-    width: 90%;
-    max-width: 1200px;
-    margin: 3rem auto;
-    text-align: center;
-  }
-  .section-title {
-    font-family: 'Amiri', serif;
-    font-size: 2rem;
-    color: #a2c11c;
-    margin-bottom: 2rem;
-  }
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-  }
-  .service-card {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  .service-icon {
-    color: #283739;
-    margin-bottom: 1rem;
-  }
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="header-content">
+        <h1 class="logo">Yorkway Mosque</h1>
+        <div class="address">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>55-61 Brewery Rd, London N7 9QH</span>
+        </div>
+      </div>
+      <nav class="navbar">
+        <i class="fas fa-bars menu-toggle" id="menuToggle"></i> <!-- Mobile menu toggle icon -->
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#prayers">Prayer Times</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#donate">Donate</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
   
-  /* PRAYER TIMES SECTION */
-  .prayer-times {
-    width: 90%;
-    max-width: 1200px;
-    margin: 3rem auto;
-    text-align: center;
-  }
-  .prayer-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1.5rem;
-  }
-  .prayer-table th,
-  .prayer-table td {
-    border: 1px solid #ccc;
-    padding: 0.75rem;
-    text-align: center;
-  }
-  .prayer-table thead {
-    background-color: #94c542;
-    color: #fff;
-  }
-  
-  /* DONATION SECTION */
-  .donate-section {
-    background-color: #E6E6E6;
-    text-align: center;
-    padding: 3rem 0;
-  }
-  .donate-container {
-    width: 90%;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  .donation-desc {
-    margin: 1rem 0 1.5rem;
-  }
-  
-  /* FOOTER */
-  .site-footer {
-    background-color: #57310f;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
-  }
-  .footer-content {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .footer-links a {
-    color: #cda45e;
-    text-decoration: none;
-    margin: 0 0.5rem;
-  }
-  .footer-links a:hover {
-    text-decoration: underline;
-  }
-  
-  /* UTILITY CLASSES */
-  .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  /* MOBILE NAV TOGGLE */
-  .menu-toggle {
-    color: #fff;
-    font-size: 1.8rem;
-    cursor: pointer;
-    display: none; /* will show via media query on small screens */
-  }
-  
-  @media (max-width: 768px) {
-    /* Show the hamburger icon, hide the nav on small screens */
-    .menu-toggle {
-      display: block;
-    }
-    .nav-links {
-      position: absolute;
-      top: 70px; /* below header */
-      right: 0;
-      background-color: #2c5d63;
-      flex-direction: column;
-      gap: 1rem;
-      padding: 1rem;
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
-      width: 200px;
-      border-left: 2px solid #cda45e;
-    }
-    .nav-links li {
-      margin: 0.5rem 0;
-    }
-    .nav-links.show {
-      transform: translateX(0);
-    }
+  <!-- PRAYER TIMES SECTION (Moved to Top) -->
+  <section class="prayer-times container" id="prayers">
+    <h2 class="section-title">Prayer Times (أوقات الصلاة)</h2>
+    <p id="today-date"></p> <!-- Show the current date or an error message -->
     
-    /* Adjust hero title sizes for mobile */
-    .hero-title {
-      font-size: 1.5rem;
-    }
-    .arabic-title {
-      font-size: 2rem;
-    }
-    .services-grid {
-      grid-template-columns: 1fr; /* Stack services on mobile */
-    }
-  }
+    <table class="prayer-table">
+      <thead>
+        <tr>
+          <th>Prayer <br><span>(Arabic / English)</span></th>
+          <th>Start Time</th>
+          <th>Jama’ah</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Fajr Row -->
+        <tr>
+          <td>
+            <span class="arabic">الفجر</span><br>
+            <span class="english">Fajr</span>
+          </td>
+          <td id="fajr-start">--:--</td>
+          <td id="fajr-jamaah">--:--</td>
+        </tr>
+        <!-- Dhuhr Row -->
+        <tr>
+          <td>
+            <span class="arabic">الظهر</span><br>
+            <span class="english">Dhuhr</span>
+          </td>
+          <td id="dhuhr-start">--:--</td>
+          <td id="dhuhr-jamaah">--:--</td>
+        </tr>
+        <!-- Asr Row -->
+        <tr>
+          <td>
+            <span class="arabic">العصر</span><br>
+            <span class="english">Asr</span>
+          </td>
+          <td id="asr-start">--:--</td>
+          <td id="asr-jamaah">--:--</td>
+        </tr>
+        <!-- Maghrib Row -->
+        <tr>
+          <td>
+            <span class="arabic">المغرب</span><br>
+            <span class="english">Maghrib</span>
+          </td>
+          <td id="maghrib-start">--:--</td>
+          <td id="maghrib-jamaah">--:--</td>
+        </tr>
+        <!-- Isha Row -->
+        <tr>
+          <td>
+            <span class="arabic">العشاء</span><br>
+            <span class="english">Isha</span>
+          </td>
+          <td id="isha-start">--:--</td>
+          <td id="isha-jamaah">--:--</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <!-- Jumu’ah Note -->
+    <p id="jumuah-note" class="jumuah-warning">
+      <!-- Will be set dynamically -->
+    </p>
+  </section>
   
-  /* Possibly make the table scrollable horizontally on very small screens */
-  @media (max-width: 768px) {
-    .prayer-table {
-      overflow-x: auto;
-      display: block;
-    }
-  }
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="overlay"></div>
+    <div class="hero-content container">
+      <h2 class="hero-title">
+        <span class="arabic-title"> ﷽</span><br/>
+        Welcome to Yorkway Mosque
+      </h2>
+      <p class="hero-subtitle">
+        “Indeed, the mosques of Allah shall be maintained only by those who believe in Allah and the Last Day…” (Qur'an 9:18)
+      </p>
+      <a href="#prayers" class="btn btn-primary">View Prayer Times</a>
+    </div>
+  </section>
   
+ <!-- MOSQUE SERVICES SECTION -->
+ <section class="services-section container" id="services">
+  <h2 class="section-title">Mosque Services</h2>
+  <div class="services-grid">
+    <!-- Quran Halaqa -->
+    <div class="service-card">
+      <img src="images/quran.jpg" alt="Quran Halaqa" class="service-image">
+      <h3>Weekly Quran Halaqa</h3>
+      <p>Join us for our Friday Halaqa open to brothers of all ages and abilities.</p>
+      <a href="quranhalaqa.html" class="btn btn-primary">Read More</a>
+    </div>
+
+    <!-- Madrasah -->
+    <div class="service-card">
+      <img src="images/madrasah.jpg" alt="Madrasah" class="service-image">
+      <h3>Madrasah</h3>
+      <p>Our Madrasah offers Quranic education, tajweed, and Islamic studies for children.</p>
+      <a href="madrasah.html" class="btn btn-primary">Read More</a>
+    </div>
+
+    <!-- Ramadan Programs -->
+    <div class="service-card">
+      <img src="images/ramadan.png" alt="Ramadan Programs" class="service-image">
+      <h3>Ramadan Programs</h3>
+      <p>Taraweeh and Qiyam time tables to be announced. Iftars held at the masjid.</p>
+      <a href="ramadan.html" class="btn btn-primary">Read More</a>
+    </div>
+
+    <!-- Eid Prayers -->
+    <div class="service-card">
+      <img src="images/eid.png" alt="Eid Prayers" class="service-image">
+      <h3>Eid Prayers</h3>
+      <p>Celebrate Eid with the community at our outdoor venue, complete with family-friendly activities.</p>
+      <a href="eid-prayers.html" class="btn btn-primary">Read More</a>
+    </div>
+  </div>
+</section>
+  
+  <!-- DONATION SECTION -->
+  <section class="donate-section" id="donate">
+    <div class="container donate-container">
+      <h2 class="section-title">Support Your Mosque</h2>
+      <p class="donation-desc">Help us maintain and grow our community services. Your support is invaluable.</p>
+      <a href="#" class="btn btn-secondary"><i class="fas fa-donate"></i> Donate Now</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>Yorkway Mosque &copy; 2024 | <span class="arabic-title">مسجد يوركواي</span></p>
+      <p class="footer-links">
+        <a href="#home">Home</a> | 
+        <a href="#prayers">Prayer Times</a> | 
+        <a href="#services">Services</a> | 
+        <a href="#donate">Donate</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- External JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>

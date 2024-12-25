@@ -86,9 +86,9 @@ document.addEventListener('DOMContentLoaded', () => {
       return (month >= 3 && month <= 8);
     }
     if (isDST(now)) {
-      jumuahNoteElem.textContent = "Jumu’ah prayers (Summer DST): 1:20pm & 2:20pm";
+      jumuahNoteElem.textContent = "Jumu’ah prayers 1st and 2nd khutba: 1:20pm & 2:00pm";
     } else {
-      jumuahNoteElem.textContent = "Jumu’ah prayers (Winter): 12:20pm & 1:20pm";
+      jumuahNoteElem.textContent = "Jumu’ah prayers 1st and 2nd Khutba: 12:20pm & 1:00pm";
     }
   }
 

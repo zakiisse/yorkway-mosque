@@ -134,7 +134,7 @@ body {
 .arabic-title {
   font-family: 'Amiri', serif;
   display: block;
-  font-size: 2rem;
+  font-size: 1.5rem;
   white-space: normal; /* Allow text to wrap if needed */
   overflow-wrap: break-word; /* Prevent overflow on small screens */
   word-wrap: break-word;

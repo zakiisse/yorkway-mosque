@@ -17,12 +17,12 @@
     "Fajr": "6:22",
     "Sunrise": "7:34",
     "DhuhrBegin": "12:19",
-    "Dhuhr": "12:30",
+    "Dhuhr": "12:20",           
     "AsrBegin": "2:27",
     "Asr": "2:45",
     "MaghribBegin": "4:55",
     "Maghrib": "5:02",
-    "IshaBegin": "6:31",
+    "IshaBegin": "6:30",       
     "Isha": "7:00"
   },
   "2025-02-03": {
@@ -35,7 +35,7 @@
     "Asr": "2:45",
     "MaghribBegin": "4:57",
     "Maghrib": "5:04",
-    "IshaBegin": "6:33",
+    "IshaBegin": "6:31",       
     "Isha": "7:00"
   },
   "2025-02-04": {
@@ -48,7 +48,7 @@
     "Asr": "2:45",
     "MaghribBegin": "4:58",
     "Maghrib": "5:05",
-    "IshaBegin": "6:34",
+    "IshaBegin": "6:32",       
     "Isha": "7:00"
   },
   "2025-02-05": {
@@ -61,7 +61,7 @@
     "Asr": "3:00",
     "MaghribBegin": "5:00",
     "Maghrib": "5:07",
-    "IshaBegin": "6:35",
+    "IshaBegin": "6:33",       
     "Isha": "7:00"
   },
   "2025-02-06": {
@@ -74,7 +74,7 @@
     "Asr": "3:00",
     "MaghribBegin": "5:02",
     "Maghrib": "5:09",
-    "IshaBegin": "6:37",
+    "IshaBegin": "6:35",       
     "Isha": "7:00"
   },
   "2025-02-07": {
@@ -87,7 +87,7 @@
     "Asr": "3:00",
     "MaghribBegin": "5:03",
     "Maghrib": "5:10",
-    "IshaBegin": "6:39",
+    "IshaBegin": "6:37",       
     "Isha": "7:00"
   },
   "2025-02-08": {

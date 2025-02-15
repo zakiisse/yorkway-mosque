@@ -7,41 +7,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const todayDate = `${yyyy}-${mm}-${dd}`;
   const todayDateElem = document.getElementById('today-date');
 
-  // Display today's date in the DOM
+  // Display today's date on the page
   if (todayDateElem) {
     todayDateElem.textContent = `Today's Date: ${todayDate}`;
   }
 
-  // 2. Fetch AlAdhan API for Accurate Entry Times
-  //    Adjust city/country/method to your preference
-  const alAdhanURL = 'https://api.aladhan.com/v1/timingsByCity?city=London&country=UK&method=2';
-
-  fetch(alAdhanURL)
+  // 2. Fetch *only* the local JSON (no more AlAdhan API)
+  fetch('data/prayerTimes.json')
     .then(response => response.json())
-    .then(apiData => {
-      if (!apiData || !apiData.data || !apiData.data.timings) {
-        throw new Error('AlAdhan API returned invalid data');
-      }
-      
-      // Extract entry times
-      const entryTimes = {
-        Fajr:    apiData.data.timings.Fajr,
-        Dhuhr:   apiData.data.timings.Dhuhr,
-        Asr:     apiData.data.timings.Asr,
-        Maghrib: apiData.data.timings.Maghrib,
-        Isha:    apiData.data.timings.Isha
-      };
-
-      // 3. Fetch Local JSON for Jama’ah Times
-      return fetch('data/prayerTimes.json')
-        .then(localRes => localRes.json())
-        .then(localData => {
-          return { entryTimes, localData };
-        });
-    })
-    .then(({ entryTimes, localData }) => {
-      // 4. Combine Both & Populate the Table
+    .then(localData => {
+      // 3. Retrieve today's prayer times from the JSON
       const todaysData = localData[todayDate];
+
       if (!todaysData) {
         if (todayDateElem) {
           todayDateElem.textContent = `No timetable for ${todayDate} in local JSON.`;
@@ -49,26 +26,29 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
+      // 4. Populate the Table
+      //    Assumes your JSON has: FajrBegin, Fajr, DhuhrBegin, Dhuhr, etc.
+      //    If your keys differ, adjust accordingly.
+
       // Fajr
-      document.getElementById('fajr-start').textContent  = entryTimes.Fajr  || '--:--';
-      document.getElementById('fajr-jamaah').textContent = todaysData.Fajr  || '--:--';
+      document.getElementById('fajr-start').textContent  = todaysData.FajrBegin  || '--:--';
+      document.getElementById('fajr-jamaah').textContent = todaysData.Fajr       || '--:--';
 
       // Dhuhr
-      document.getElementById('dhuhr-start').textContent  = entryTimes.Dhuhr || '--:--';
-      document.getElementById('dhuhr-jamaah').textContent = todaysData.Dhuhr || '--:--';
+      document.getElementById('dhuhr-start').textContent  = todaysData.DhuhrBegin  || '--:--';
+      document.getElementById('dhuhr-jamaah').textContent = todaysData.Dhuhr       || '--:--';
 
       // Asr
-      document.getElementById('asr-start').textContent  = entryTimes.Asr || '--:--';
-      document.getElementById('asr-jamaah').textContent = todaysData.Asr || '--:--';
+      document.getElementById('asr-start').textContent  = todaysData.AsrBegin  || '--:--';
+      document.getElementById('asr-jamaah').textContent = todaysData.Asr       || '--:--';
 
       // Maghrib
-      document.getElementById('maghrib-start').textContent  = entryTimes.Maghrib || '--:--';
-      document.getElementById('maghrib-jamaah').textContent = todaysData.Maghrib || '--:--';
+      document.getElementById('maghrib-start').textContent  = todaysData.MaghribBegin  || '--:--';
+      document.getElementById('maghrib-jamaah').textContent = todaysData.Maghrib        || '--:--';
 
       // Isha
-      document.getElementById('isha-start').textContent  = entryTimes.Isha || '--:--';
-      // If your JSON uses "Esha", optionally do: || todaysData.Esha
-      document.getElementById('isha-jamaah').textContent = todaysData.Isha || '--:--';
+      document.getElementById('isha-start').textContent  = todaysData.IshaBegin  || '--:--';
+      document.getElementById('isha-jamaah').textContent = todaysData.Isha       || '--:--';
     })
     .catch(error => {
       console.error('Error loading prayer times:', error);
@@ -77,29 +57,27 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-  // 5. Handle Jumu’ah DST Note
+  // 5. Handle Jumu’ah DST Note (optional)
   const jumuahNoteElem = document.getElementById('jumuah-note');
   if (jumuahNoteElem) {
     function isDST(date) {
-      const month = date.getMonth(); // 0=Jan, 1=Feb, ...
-      // Quick check: assume April–September is DST in some places
+      const month = date.getMonth(); // 0=Jan, 1=Feb, etc.
+      // Simple assumption: DST is from April (3) to September (8)
       return (month >= 3 && month <= 8);
     }
     if (isDST(now)) {
-      jumuahNoteElem.textContent = "Jumu’ah prayers 1st and 2nd khutba: 1:20pm & 2:00pm";
+      jumuahNoteElem.textContent = "Jumu’ah prayers (DST) – 1st Khutba: 1:20pm, 2nd Khutba: 2:00pm";
     } else {
-      jumuahNoteElem.textContent = "Jumu’ah prayers 1st and 2nd Khutba: 12:20pm & 1:00pm";
+      jumuahNoteElem.textContent = "Jumu’ah prayers – 1st Khutba: 12:20pm, 2nd Khutba: 1:00pm";
     }
   }
 
-  // 6. Mobile Nav Toggle
+  // 6. Mobile Nav Toggle (if your HTML has #menuToggle/#navLinks)
   const menuToggle = document.getElementById('menuToggle');
-  const navLinks   = document.getElementById('navLinks');
+  const navLinks = document.getElementById('navLinks');
   if (menuToggle && navLinks) {
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('show');
     });
   }
 });
-
-  

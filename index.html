@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" />
   
-  <!-- Favicon Link -->
-  <link rel="icon" href="https://scontent-lhr6-1.xx.fbcdn.net/v/t1.6435-9/44213861_1607786676033709_6479503966165008384_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=o9ulAGao5LoQ7kNvgFtuLn6&_nc_zt=23&_nc_ht=scontent-lhr6-1.xx&_nc_gid=ANDsBGExWdEBy7NGimv7kVM&oh=00_AYDuyrHogeitFVzGaeRT3gOsY2xhgk_bANmookHSr4OqNw&oe=678EA7E0" type="image/png" />
+  <!-- Favicon Link (optional) -->
+  <link rel="icon" href="images/favicon.png" type="image/png" />
   
   <!-- External CSS -->
   <link rel="stylesheet" href="css/styles.css">
@@ -42,10 +42,10 @@
     </div>
   </header>
   
-  <!-- PRAYER TIMES SECTION (Moved to Top) -->
+  <!-- PRAYER TIMES SECTION -->
   <section class="prayer-times container" id="prayers">
     <h2 class="section-title">Prayer Times (أوقات الصلاة)</h2>
-    <p id="today-date"></p> <!-- Show the current date or an error message -->
+    <p id="today-date"></p> <!-- JS will display today's date or an error -->
     
     <table class="prayer-table">
       <thead>
@@ -104,10 +104,8 @@
       </tbody>
     </table>
     
-    <!-- Jumu’ah Note -->
-    <p id="jumuah-note" class="jumuah-warning">
-      <!-- Will be set dynamically -->
-    </p>
+    <!-- Jumu’ah Note (Optional) -->
+    <p id="jumuah-note" class="jumuah-warning"></p>
   </section>
   
   <!-- HERO SECTION -->
@@ -125,43 +123,20 @@
     </div>
   </section>
   
- <!-- MOSQUE SERVICES SECTION -->
- <section class="services-section container" id="services">
-  <h2 class="section-title">Mosque Services</h2>
-  <div class="services-grid">
-    <!-- Quran Halaqa -->
-    <div class="service-card">
-      <img src="images/quran.jpg" alt="Quran Halaqa" class="service-image">
-      <h3>Weekly Quran Halaqa</h3>
-      <p>Join us for our Friday Halaqa open to brothers of all ages and abilities.</p>
-      <a href="quranhalaqa.html" class="btn btn-primary">Read More</a>
+  <!-- MOSQUE SERVICES SECTION -->
+  <section class="services-section container" id="services">
+    <h2 class="section-title">Mosque Services</h2>
+    <div class="services-grid">
+      <!-- Example service cards ... -->
+      <div class="service-card">
+        <img src="images/quran.jpg" alt="Quran Halaqa" class="service-image">
+        <h3>Weekly Quran Halaqa</h3>
+        <p>Join us for our Friday Halaqa open to brothers of all ages and abilities.</p>
+        <a href="quranhalaqa.html" class="btn btn-primary">Read More</a>
+      </div>
+      <!-- More cards as needed -->
     </div>
-
-    <!-- Madrasah -->
-    <div class="service-card">
-      <img src="images/madrasah.jpg" alt="Madrasah" class="service-image">
-      <h3>Madrasah</h3>
-      <p>Our Madrasah offers Quranic education, tajweed, and Islamic studies for children.</p>
-      <a href="madrasah.html" class="btn btn-primary">Read More</a>
-    </div>
-
-    <!-- Ramadan Programs -->
-    <div class="service-card">
-      <img src="images/ramadan.png" alt="Ramadan Programs" class="service-image">
-      <h3>Ramadan Programs</h3>
-      <p>Taraweeh and Qiyam time tables to be announced. Iftars held at the masjid.</p>
-      <a href="ramadan.html" class="btn btn-primary">Read More</a>
-    </div>
-
-    <!-- Eid Prayers -->
-    <div class="service-card">
-      <img src="images/eid.png" alt="Eid Prayers" class="service-image">
-      <h3>Eid Prayers</h3>
-      <p>Celebrate Eid with the community at our outdoor venue, complete with family-friendly activities.</p>
-      <a href="eid-prayers.html" class="btn btn-primary">Read More</a>
-    </div>
-  </div>
-</section>
+  </section>
   
   <!-- DONATION SECTION -->
   <section class="donate-section" id="donate">
@@ -177,9 +152,9 @@
     <div class="container footer-content">
       <p>Yorkway Mosque &copy; 2024 | <span class="arabic-title">مسجد يوركواي</span></p>
       <p class="footer-links">
-        <a href="#home">Home</a> | 
-        <a href="#prayers">Prayer Times</a> | 
-        <a href="#services">Services</a> | 
+        <a href="#home">Home</a> |
+        <a href="#prayers">Prayer Times</a> |
+        <a href="#services">Services</a> |
         <a href="#donate">Donate</a>
       </p>
     </div>

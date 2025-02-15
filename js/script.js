@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     todayDateElem.textContent = `Today's Date: ${todayDate}`;
   }
 
-  // 2. Fetch *only* the local JSON (no more AlAdhan API)
+  // 2. Fetch the LOCAL JSON (no external API)
+  //    Make sure prayerTimes.json is in /data folder
   fetch('data/prayerTimes.json')
     .then(response => response.json())
     .then(localData => {
@@ -23,12 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (todayDateElem) {
           todayDateElem.textContent = `No timetable for ${todayDate} in local JSON.`;
         }
-        return;
+        return; // Stop if no matching date
       }
 
       // 4. Populate the Table
-      //    Assumes your JSON has: FajrBegin, Fajr, DhuhrBegin, Dhuhr, etc.
-      //    If your keys differ, adjust accordingly.
+      //    Adjust if your JSON keys differ from FajrBegin, Fajr, etc.
 
       // Fajr
       document.getElementById('fajr-start').textContent  = todaysData.FajrBegin  || '--:--';
@@ -57,24 +57,24 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-  // 5. Handle Jumu’ah DST Note (optional)
+  // 5. (Optional) Handle Jumu’ah DST Note
   const jumuahNoteElem = document.getElementById('jumuah-note');
   if (jumuahNoteElem) {
     function isDST(date) {
-      const month = date.getMonth(); // 0=Jan, 1=Feb, etc.
-      // Simple assumption: DST is from April (3) to September (8)
+      const month = date.getMonth(); // 0=Jan, 1=Feb, ...
+      // Simple guess: DST from April (3) to September (8)
       return (month >= 3 && month <= 8);
     }
     if (isDST(now)) {
-      jumuahNoteElem.textContent = "Jumu’ah prayers (DST) – 1st Khutba: 1:20pm, 2nd Khutba: 2:00pm";
+      jumuahNoteElem.textContent = "Jumu’ah (DST) – 1st Khutba: 1:20pm, 2nd: 2:00pm";
     } else {
-      jumuahNoteElem.textContent = "Jumu’ah prayers – 1st Khutba: 12:20pm, 2nd Khutba: 1:00pm";
+      jumuahNoteElem.textContent = "Jumu’ah – 1st Khutba: 12:20pm, 2nd: 1:00pm";
     }
   }
 
-  // 6. Mobile Nav Toggle (if your HTML has #menuToggle/#navLinks)
+  // 6. Mobile Nav Toggle (for smaller screens)
   const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
+  const navLinks   = document.getElementById('navLinks');
   if (menuToggle && navLinks) {
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('show');

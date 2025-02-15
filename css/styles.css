@@ -208,30 +208,52 @@ body {
 }
 
 /* PRAYER TIMES SECTION */
+/* PRAYER TIMES SECTION */
 .prayer-times {
   width: 90%;
   max-width: 1200px;
   margin: 3rem auto;
   text-align: center;
 }
+
+/* The Table Itself */
 .prayer-table {
-  width: 90%; /* Ensures the table doesn't occupy the entire width */
-  max-width: 800px; /* Adds a maximum width for larger screens */
-  margin: 0 auto; /* Centers the table horizontally */
-  border-collapse: collapse; /* Ensures proper table styling */
-  margin-top: 1.5rem;
+  width: 90%;
+  max-width: 800px;
+  margin: 1.5rem auto 0;
+  border-collapse: collapse;
+  background-color: #222; /* Dark background */
+  box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Slight glow around the table */
 }
 
+/* Table Header Styling */
+.prayer-table thead {
+  background-color: #94c542; /* Keep your green header color */
+  color: #fff;
+  text-transform: uppercase;
+}
 
+/* Table Body Cells & Digital Effect */
 .prayer-table th,
 .prayer-table td {
-  border: 1px solid #ccc;
+  border: 1px solid #444;
   padding: 0.75rem;
   text-align: center;
+
+  /* Add a digital-like monospace or custom 7-segment font if available */
+  font-family: 'Digital-7', 'Segment7', monospace;
+  font-size: 1rem; /* Adjust as you like */
+
+  /* This creates a slight "LED glow" effect. Tweak color/blur to your taste. */
+  color: #00ff00; /* Neon green for that “old digital clock” vibe */
+  text-shadow: 0 0 3px #0f0, 0 0 5px #0f0;
 }
-.prayer-table thead {
-  background-color: #94c542;
-  color: #fff;
+
+/* Optional: Distinguish header columns vs. data columns */
+.prayer-table th {
+  font-size: 1.1rem; /* Maybe a bit bigger for the header */
+  color: #fff;       /* White text on the green background */
+  text-shadow: none; /* No glow for header, just keep it crisp */
 }
 
 /* DONATION SECTION */
